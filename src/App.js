@@ -1,32 +1,66 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { withAuthenticator } from 'aws-amplify-react'
-import Amplify, { Auth } from 'aws-amplify';
-import aws_exports from './aws-exports';
+import React, { useState } from "react";
+import { withAuthenticator } from "aws-amplify-react";
+import Amplify, { Auth } from "aws-amplify";
+import aws_exports from "./aws-exports";
+import Button from "@material-ui/core/Button";
+import "./App.css";
+import InputWithIcon from "./components/iconText";
+import StartCall from "./components/startCall";
+
 Amplify.configure(aws_exports);
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => {
+  const [state, ibte] = useState(true);
+
+  const renderContent = () => {
+    console.log("called: ", state);
+    if (state) {
+      return <InputWithIcon />;
+    } else {
+      return <StartCall />;
+    }
+  };
+
+  return (
+    <div className="App">
+      <img src={require("./images/logo.png")} alt="logo" />
+      <h1>Welcome to Amazon Topics! Amazing!</h1>
+      <h2>
+        Leverage today's data on topic-based feedback to improve tomorrow's
+        lesson
+      </h2>
+      <p></p>
+      <Button
+        onClick={() => ibte(false)}
+        variant="contained"
+        color="primary"
+        fullWidth="true"
+      >
+        {" "}
+        Start a Call{" "}
+      </Button>
+      <p></p>
+      <Button
+        onClick={() => ibte(true)}
+        variant="contained"
+        color="primary"
+        fullWidth="true"
+      >
+        {" "}
+        Back{" "}
+      </Button>
+      {}
+      {renderContent()}
+
+      {/* 
+        <route path=/ component={landingPage}/>
+        <route path=/startCall component={startCall}/>
+
+      */}
+
+      {}
+    </div>
+  );
+};
 
 export default withAuthenticator(App, true);
