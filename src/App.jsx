@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div className="App">
       <img src={require("./images/logo.png")} alt="logo" />
-      <h1>Welcome to Amazon Topics! Amazing!</h1>
+      <h1>Welcome to Amazon Topics!</h1>
       <h2>
         Leverage today's data on topic-based feedback to improve tomorrow's
         lesson
