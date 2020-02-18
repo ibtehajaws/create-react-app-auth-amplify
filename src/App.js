@@ -10,16 +10,14 @@ import "./App.css";
 Amplify.configure(aws_exports);
 
 const App = () => {
-  //const [state, ibte] = useState(true);
+  const [state, ibte] = useState(true);
   const state = false;
-  const ibte = a => console.log(a);
   const renderContent = () => {
-    console.log("called: ", state);
-    //    if (state) {
-    //      return <InputWithIcon />;
-    //    } else {
-    //      return <StartCall />;
-    //    }
+    if (state) {
+      return <InputWithIcon />;
+    } else {
+      return <StartCall />;
+    }
   };
 
   return (
@@ -31,22 +29,12 @@ const App = () => {
         lesson
       </h2>
       <p></p>
-      <Button
-        onClick={() => ibte(false)}
-        variant="contained"
-        color="primary"
-        fullWidth="true"
-      >
+      <Button onClick={() => ibte(false)} variant="contained" color="primary">
         {" "}
         Start a Call{" "}
       </Button>
       <p></p>
-      <Button
-        onClick={() => ibte(true)}
-        variant="contained"
-        color="primary"
-        fullWidth="true"
-      >
+      <Button onClick={() => ibte(true)} variant="contained" color="primary">
         {" "}
         Back{" "}
       </Button>
