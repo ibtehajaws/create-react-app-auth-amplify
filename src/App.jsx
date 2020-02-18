@@ -55,7 +55,7 @@ const App = () => {
       {/* 
         <route path=/ component={landingPage}/>
         <route path=/startCall component={startCall}/>
-
+        //react router
       */}
 
       {}
