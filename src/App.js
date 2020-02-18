@@ -4,14 +4,13 @@ import Amplify, { Auth } from "aws-amplify";
 import aws_exports from "./aws-exports";
 import Button from "@material-ui/core/Button";
 import "./App.css";
-//import InputWithIcon from "./components/iconText";
-//import StartCall from "./components/startCall";
+import InputWithIcon from "./components/iconText";
+import StartCall from "./components/startCall";
 
 Amplify.configure(aws_exports);
 
 const App = () => {
   const [state, ibte] = useState(true);
-  const state = false;
   const renderContent = () => {
     if (state) {
       return <InputWithIcon />;
