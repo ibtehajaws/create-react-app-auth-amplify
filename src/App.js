@@ -10,7 +10,7 @@ import "./App.css";
 Amplify.configure(aws_exports);
 
 const App = () => {
-  const [state, ibte] = useState(true);
+  //const [state, ibte] = useState(true);
 
   const renderContent = () => {
     console.log("called: ", state);
