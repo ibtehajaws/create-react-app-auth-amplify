@@ -11,7 +11,8 @@ Amplify.configure(aws_exports);
 
 const App = () => {
   //const [state, ibte] = useState(true);
-
+  const state = false;
+  const ibte = a => console.log(a);
   const renderContent = () => {
     console.log("called: ", state);
     //    if (state) {
