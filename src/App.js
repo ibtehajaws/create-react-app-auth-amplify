@@ -6,14 +6,12 @@ import Button from "@material-ui/core/Button";
 import "./App.css";
 import InputWithIcon from "./components/iconText";
 import StartCall from "./components/startCall";
-import Main from "./components/main";
-import Bundle from "./components/bundle";
-import AwsSignature from "./components/aws-signature-v4";
 
 Amplify.configure(aws_exports);
 
 const App = () => {
   const [state, ibte] = useState(true);
+
   const renderContent = () => {
     if (state) {
       return <InputWithIcon />;
@@ -40,6 +38,7 @@ const App = () => {
         {" "}
         Back{" "}
       </Button>
+
       {}
       {renderContent()}
 
@@ -48,7 +47,6 @@ const App = () => {
         <route path=/startCall component={startCall}/>
         //react router
       */}
-
       {}
     </div>
   );
